@@ -1,0 +1,171 @@
+@import "./normalize.scss";
+@import "./reset.scss";
+
+$grey: #464646;
+$red: #f73427;
+
+@font-face {
+    font-family: "cambria_bold";
+    src: url("../fonts/cambriab.ttf");
+}
+
+@font-face {
+    font-family: "arial";
+    src: url("../fonts/arial.ttf");
+}
+
+.overlay {
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    @media screen and (max-width: 1300px) {
+        opacity: 0.4;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1620px;
+    padding: 0px 30px;
+}
+
+main {
+    font-family: "arial";
+    background-image: url("../img/sparks_front.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    width: 100vw;
+    .content_wrapper {
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 50%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+        @media screen and (max-width: 1300px) {
+            left: 50%;
+        }
+        .content {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .percents {
+                color: white;
+                font-family: "cambria_bold";
+                font-size: 208px;
+                font-weight: 900;
+                @media screen and (max-width: 600px) {
+                    font-size: 108px;
+                }
+            }
+            .welcome_bonus {
+                color: white;
+                text-transform: uppercase;
+                font-family: "cambria_bold";
+                font-size: 67px;
+                font-weight: 900;
+                margin-bottom: 52px;
+                @media screen and (max-width: 600px) {
+                    font-size: 36px;
+                    margin-bottom: 42px;
+                }
+            }
+            .copy_code_wrapper {
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                border: 1px dashed $grey;
+                border-radius: 50px;
+                padding: 15px 35px;
+                gap: 62px;
+                margin-bottom: 52px;
+                @media screen and (max-width: 600px) {
+                    margin-bottom: 32px;
+                }
+                .promo_code {
+                    color: $red;
+                    font-size: 40px;
+                    @media screen and (max-width: 600px) {
+                        font-size: 22px;
+                    }
+                }
+                .copy_promo_code_button {
+                    color: white;
+                    outline: none;
+                    cursor: pointer;
+                    font-size: 18px;
+                    transition: all 0.1s;
+                    @media screen and (max-width: 600px) {
+                        font-size: 10px;
+                    }
+                    &:hover {
+                        color: $red;
+                    }
+                }
+                @media screen and (max-width: 600px) {
+                    padding: 10px 35px;
+                }
+            }
+            .play_now_button {
+                background-color: $red;
+                border: none;
+                color: white;
+                text-transform: uppercase;
+                cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                font-weight: 600;
+                font-size: 20px;
+                padding: 24px 119px;
+                border-radius: 50px;
+                transition: all 0.1s;
+                @media screen and (max-width: 600px) {
+                    font-size: 12px;
+                    padding: 20px 80px;
+                }
+                &:active {
+                    border: none;
+                }
+                &:hover {
+                    color: $red;
+                    background-color: white;
+                }
+            }
+        }
+    }
+    .footer {
+        display: flex;
+        width: 93vw;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        position: absolute;
+        font-size: 30px;
+        bottom: 2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .logo {
+            @media screen and (max-width: 600px) {
+                width: 120px;
+                height: auto;
+            }
+        }
+        .terms {
+            color: $grey;
+            font-size: 14px;
+            font-weight: 600;
+            font-stretch: expanded;
+            @media screen and (max-width: 600px) {
+                font-size: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.min.css" />
+        <link rel="icon" type="image/x-icon" href="./img/image.png" />
+        <title>7 slots</title>
+    </head>
+    <body>
+        <main>
+            <div class="overlay"></div>
+            <div class="container">
+                <section class="content_wrapper">
+                    <div class="content">
+                        <p class="percents">300%</p>
+                        <p class="welcome_bonus">Welcome bonus</p>
+                        <div class="copy_code_wrapper">
+                            <span id="promo_code" class="promo_code">Withcer</span>
+                            <span onclick="copyText()" class="copy_promo_code_button">Copy code</span>
+                        </div>
+                        <button class="play_now_button">Play now</button>
+                    </div>
+                </section>
+                <footer class="footer">
+                    <img class="logo" src="./img/logo.png" alt="" />
+                    <span class="terms">*Terms and Conditions Apply</span>
+                </footer>
+            </div>
+        </main>
+        <script>
+            const copyText = () => {
+                const textBlock = document.getElementById("promo_code");
+                const tempInput = document.createElement("input");
+                tempInput.value = textBlock.innerText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                alert("Promocode " + textBlock.innerText + " has been copied!");
+            };
+        </script>
+    </body>
+</html>
